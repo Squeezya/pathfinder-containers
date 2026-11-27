@@ -65,6 +65,7 @@
 - **`composer-dev.json` is removed** (pathfinder #308). It no longer worked. The pathfinder_esi README now describes a Composer `path` repository instead (esi #9).
 - **Less console noise in the map client** (pathfinder #284). Info lines that traced normal use no longer appear in the browser console. Warnings and unusual conditions are still logged.
 - **`SLOW_REQUEST` removed** from the static `pathfinder.ini` (containers #139). The app dropped the slow request log, so the key did nothing.
+- **Valkey `maxmemory` raised from 64 MB to 256 MB** in `config/redis/redis.conf`. At 64 MB the cache filled up and evicted keys, which can include idle login sessions.
 
 ### PHP 8.5 and dependencies
 
